@@ -1,0 +1,67 @@
+<section class="form-container">
+  <div *ngIf="showForm" [formGroup]="form">
+    <form *ngFor="let group of formData; let index = index; trackBy: trackByFn" [formGroupName]="group.groupName">
+
+      <ng-container *ngFor="let control of group.controls; trackBy:trackByFn">
+
+        <ng-container *ngIf="control.type === ControlTypesEnum.Text || control.type === ControlTypesEnum.Email || control.type === ControlTypesEnum.Number">
+          <fieldset>
+            <div>
+              <label *ngIf="control.displayText">{{control.displayText}}</label>
+            </div>
+            <input
+              pInputText
+              [type]="control.type"
+              [formControlName]="control.name"
+              [attr.placeholder]="control.placeholder || null">
+              <div *ngIf="control.errorMessage" class="error-message">
+                <div class="error"
+                  [class.show]="form.get(group.groupName).controls[control.name].invalid && form.get(group.groupName).controls[control.name].dirty">
+                  <img src="assets/danger-icon.svg" alt="" width="20"> {{control.errorMessage}}
+                </div>
+              </div>
+          </fieldset>
+        </ng-container>
+
+        <ng-container *ngIf="control.type === ControlTypesEnum.Date">
+          <fieldset>
+            <div>
+              <label *ngIf="control.displayText">{{control.displayText}}</label>
+            </div>
+            <p-calendar
+              [formControlName]="control.name"
+              [attr.placeholder]="control.placeholder || null">
+            </p-calendar>
+            <div *ngIf="control.errorMessage" class="error-message">
+              <div class="error"
+                [class.show]="form.get(group.groupName).controls[control.name].invalid && form.get(group.groupName).controls[control.name].dirty">
+                <img src="assets/danger-icon.svg" alt="" width="20"> {{control.errorMessage}}
+              </div>
+            </div>
+          </fieldset>
+        </ng-container>
+
+        <ng-container *ngIf="control.type === ControlTypesEnum.Dropdown">
+          <fieldset>
+            <div>
+              <label *ngIf="control.displayText">{{control.displayText}}</label>
+            </div>
+            <p-dropdown [options]="control.dropdown" [formControlName]="control.name" optionLabel="label" optionValue="value"></p-dropdown>
+            <div *ngIf="control.errorMessage" class="error-message">
+              <div class="error"
+                [class.show]="form.get(group.groupName).controls[control.name].invalid && form.get(group.groupName).controls[control.name].dirty">
+                <img src="assets/danger-icon.svg" alt="" width="20"> {{control.errorMessage}}
+              </div>
+            </div>
+          </fieldset>
+        </ng-container>
+
+      </ng-container>
+
+      <div *ngIf="group.separator && form.length > 1">
+        <hr>
+      </div>
+
+    </form>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+div.app {
+  .flex-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    section {
+      p-accordion {
+        margin-right: 24px;
+      }
+    }
+
+    section {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+    }
+
+  }
+}
