@@ -76,13 +76,6 @@ export const formGroups2: IFormSection[] = [
         required: false,
         placeholder: 'number of destinations',
         displayText: 'number of destinations'
-      },
-      {
-        name: 'numberOfTravelers',
-        type: ControlTypesEnum.Number,
-        required: true,
-        placeholder: 'number of travelers',
-        displayText: 'number of travelers'
       }
 
     ]

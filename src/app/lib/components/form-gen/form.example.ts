@@ -110,6 +110,7 @@ export const formGroups: IFormSection[] = [
     controls: [
       {
         name: 'City',
+        displayText: 'City',
         required: true,
         type: ControlTypesEnum.Dropdown,
         dropdown:  [

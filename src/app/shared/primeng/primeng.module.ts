@@ -5,14 +5,15 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { ButtonModule } from 'primeng/button';
-
+import { ToolbarModule } from 'primeng/toolbar';
 
 const modules = [
   AccordionModule,
   DropdownModule,
   InputTextModule,
   CalendarModule,
-  ButtonModule
+  ButtonModule,
+  ToolbarModule
 ];
 
 @NgModule({

@@ -1,19 +1,14 @@
+
+
 div.app {
   .flex-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
+    margin: 16px 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-top: 16px;
     section {
-      p-accordion {
-        margin-right: 24px;
-      }
-    }
 
-    section {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
 
     }
 

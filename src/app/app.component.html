@@ -1,7 +1,5 @@
 <div class="app">
-  <h3>
-    Dynamic Forms Demo
-  </h3>
+  <p-toolbar>Dynamic Forms</p-toolbar>
 
   <section class="flex-wrapper">
     <section class="left-from">
@@ -16,7 +14,9 @@
           <button pButton [disabled]="!formIsValid" label="submit"></button>
         </p-accordionTab>
       </p-accordion>
-      <p-accordion>
+    </section>
+    <section class="middle-form">
+        <p-accordion>
         <p-accordionTab header="dynamic form2" [selected]="true">
           <app-form-gen
             [formData]="formData2"
